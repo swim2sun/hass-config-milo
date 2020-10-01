@@ -27,3 +27,9 @@ switch:
     state_property: 'power'
     state_on_value: 'on'
     state_off_value: 'off'
+
+vacuum:
+  - platform: xiaomi_miio
+    name: xiaomi_vacuum
+    host: 192.168.15.166
+    token: !secret xiaomi_vacuum_token
