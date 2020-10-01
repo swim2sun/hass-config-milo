@@ -1,0 +1,29 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+homekit:
+
+yeelight:
+
+switch:
+  - platform: xiaomi_miio_raw
+    name: bhf_light
+    host: 192.168.15.194
+    token: !secret bhf_light_token
+    turn_on_command: 'set_power'
+    turn_on_parameters: 'on'
+    turn_off_command: 'set_power'
+    turn_off_parameters: 'off'
+    state_property: 'power'
+    state_on_value: 'on'
+    state_off_value: 'off'
