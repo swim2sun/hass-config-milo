@@ -33,3 +33,14 @@ vacuum:
     name: xiaomi_vacuum
     host: 192.168.15.166
     token: !secret xiaomi_vacuum_token
+
+sonoff:
+  username: !secret sonoff_username
+  password: !secret sonoff_password
+
+fan:
+  - platform: yeelink
+    name: ven_fan
+    host: 192.168.15.213
+    token: !secret ven_fan_token
+    
