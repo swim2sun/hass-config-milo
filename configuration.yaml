@@ -43,4 +43,9 @@ fan:
     name: ven_fan
     host: 192.168.15.213
     token: !secret ven_fan_token
-    
+
+sensor:
+  - platform: mi_water_purifier
+    host: 192.168.15.207
+    token: !secret mi_water_purifier_token
+    name: mi_water_purifier
