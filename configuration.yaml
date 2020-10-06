@@ -43,6 +43,10 @@ fan:
     name: ven_fan
     host: 192.168.15.213
     token: !secret ven_fan_token
+  - platform: xiaomi_miio_fan
+    name: xiaomi_fan
+    host: 192.168.15.186
+    token: !secret xiaomi_fan_token
 
 sensor:
   - platform: mi_water_purifier
