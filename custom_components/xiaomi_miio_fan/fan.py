@@ -46,6 +46,7 @@ MODEL_FAN_ZA4 = "zhimi.fan.za4"
 MODEL_FAN_P5 = "dmaker.fan.p5"
 MODEL_FAN_P9 = "dmaker.fan.p9"
 MODEL_FAN_P10 = "dmaker.fan.p10"
+MODEL_FAN_P11 = "dmaker.fan.p11"
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
@@ -63,6 +64,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
                 MODEL_FAN_P5,
                 MODEL_FAN_P9,
                 MODEL_FAN_P10,
+                MODEL_FAN_P11
             ]
         ),
         vol.Optional(CONF_RETRIES, default=DEFAULT_RETRIES): cv.positive_int,
@@ -275,7 +277,7 @@ async def async_setup_platform(hass, config, async_add_devices, discovery_info=N
 
         fan = FanP5(host, token, model=model)
         device = XiaomiFanP5(name, fan, model, unique_id, retries)
-    elif model in [MODEL_FAN_P9, MODEL_FAN_P10]:
+    elif model in [MODEL_FAN_P9, MODEL_FAN_P10, MODEL_FAN_P11]:
         from miio import FanMiot
 
         fan = FanMiot(host, token, model=model)
