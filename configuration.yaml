@@ -53,3 +53,16 @@ sensor:
     host: 192.168.15.207
     token: !secret mi_water_purifier_token
     name: mi_water_purifier
+
+asuswrt:
+    host: 192.168.15.86
+    username: !secret asuswrt_username
+    password: !secret asuswrt_password
+
+device_tracker:
+  - platform: asuswrt
+    host: 192.168.15.86
+    username: !secret asuswrt_username
+    password: !secret asuswrt_password
+    new_device_defaults:
+        track_new_devices: true
